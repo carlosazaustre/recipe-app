@@ -7,15 +7,15 @@ import { RecipeSteps } from "./components/RecipeSteps";
 import { initialRecipes } from "./initialRecipes";
 
 export default function App() {
-  const [recipe, setRecipe] = useState(initialRecipes);
+  const [recipe, setRecipe] = useState(initialRecipes[0]);
   const [prepared, setPrepared] = useState(false);
 
   useEffect(() => {
-    setPrepared(recipe[0].ingredients.every((i) => i.prepared));
+    setPrepared(recipe.ingredients.every((i) => i.prepared));
   }, [recipe]);
 
-  const ingredientClick = (index) => {
-    const updatedRecipe = { ...recipe[0] };
+  const handleIngredientClick = (index) => {
+    const updatedRecipe = { ...recipe };
     updatedRecipe.ingredients[index].prepared = !updatedRecipe.ingredients[
       index
     ].prepared;
@@ -24,16 +24,16 @@ export default function App() {
 
   return (
     <article className="container">
-      <RecipeImage image={recipe[0].image} title={recipe[0].title} />
-      <RecipeTitle title={recipe[0].title} feedback={recipe[0].feedback} />
+      <RecipeImage image={recipe.image} title={recipe.title} />
+      <RecipeTitle title={recipe.title} feedback={recipe.feedback} />
       <IngredientList
-        ingredients={recipe[0].ingredients}
-        onClick={ingredientClick}
+        ingredients={recipe.ingredients}
+        onIngredientClick={handleIngredientClick}
       />
       <h2 className="subtitle">
-        {recipe[0].prepared ? "👨‍🍳 Prep work done!" : "🍳 Just Keep chopping"}
+        {prepared ? "👨‍🍳 Prep work done!" : "🍳 Just Keep chopping"}
       </h2>
-      <RecipeSteps steps={recipe[0].steps} />
+      <RecipeSteps steps={recipe.steps} />
     </article>
   );
 }

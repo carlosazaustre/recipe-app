@@ -1,25 +1,20 @@
 import "./IngredientList.css";
 import React from "react";
 
-function IngredientItem({ index, ingredient }) {
-  return (
-    <li
-      key={index}
-      className={`${ingredient.prepared ? "prepared" : ""} ingredient`}
-      onClick={() => props.onClick(index)}
-    >
-      {ingredient.name}
-    </li>
-  );
-}
-
-export function IngredientList({ ingredients }) {
+export function IngredientList({ ingredients, onIngredientClick }) {
   return (
     <>
       <h2 className="subtitle">Ingredients List</h2>
       <ul className="ingredient-list">
-        {ingredients.map((ingredient, index) => (
-          <IngredientItem index={index} ingredient={ingredient} />
+        {ingredients?.map((ingredient, index) => (
+          <li
+            key={index}
+            className={`${ingredient.prepared ? "prepared" : ""} ingredient`}
+            ingredient={ingredient}
+            onClick={() => onIngredientClick(index)}
+          >
+            {ingredient.name}
+          </li>
         ))}
       </ul>
     </>
