@@ -1,6 +1,17 @@
-article {
-  margin-left: 10%;
-  margin-right: 10%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 18px;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+
+:root {
+  --primary: #10b981;
+  --primary-light: #d1fae5;
+  --primary-dark: #065f46;
+  --black: #1f2937;
+  --gray: #9ca3af;
+  --gray-light: #eaeaea;
+  --red: #dc2626;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: Montserrat;
 }

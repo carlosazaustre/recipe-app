@@ -1,3 +1,4 @@
+import "./RecipeSteps.css";
 import React from "react";
 
 export default function RecipeSteps(props) {
@@ -5,5 +6,10 @@ export default function RecipeSteps(props) {
     return <li key={index}>{step}</li>;
   });
 
-  return <ol>{recipeStepsList}</ol>;
+  return (
+    <>
+      <h2 className="subtitle">Steps</h2>
+      <ol className="step-list">{recipeStepsList}</ol>
+    </>
+  );
 }

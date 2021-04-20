@@ -1,0 +1,21 @@
+.recipe-title {
+  background-color: white;
+  padding: 0.5rem 0 0;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: relative;
+  top: -2rem;
+}
+
+.recipe-title > h2 {
+  color: var(--primary);
+}
+
+.green {
+  color: var(--primary-dark);
+}
+
+.red {
+  color: var(--red);
+}

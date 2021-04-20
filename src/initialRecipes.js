@@ -1,0 +1,77 @@
+export const initialRecipes = [
+  {
+    title: "Mashed potatoes",
+    image: "mashed-potatoes.jpeg",
+    feedback: {
+      rating: 4.8,
+      reviews: 20,
+    },
+    ingredients: [
+      { name: '3 potatoes, cut into 1/2" pieces', prepared: false },
+      { name: "4 Tbsp butter", prepared: false },
+      { name: "1/8 cup heavy cream", prepared: false },
+      { name: "Salt", prepared: true },
+      { name: "Pepper", prepared: true },
+    ],
+    steps: [
+      "Add cut potatoes to a pot of heavily salted water.",
+      "Bring pot to a boil.",
+      "Boil the potatoes until fork tender, about 15-20 minutes.",
+      "Strain the potatoes",
+      "Return potatoes to pot.",
+      "Add butter, cream, salt, and pepper to taste.",
+      "Mash potatoes.",
+      "Reseason and add butter and cream as desired.",
+    ],
+  },
+  {
+    title: "Pasta Alla Genovese",
+    image: "genovese-pasta.jpg",
+    feedback: {
+      rating: 4.8,
+      reviews: 20,
+    },
+    ingredients: [
+      { name: "Squeeze lemon and parmesan to serve", prepared: false },
+      { name: "100.0 g green beans", prepared: false },
+      { name: "1 small tub fresh pesto", prepared: false },
+      { name: "150g new potatoes", prepared: true },
+      { name: "300g trofie paste", prepared: true },
+    ],
+    steps: [
+      "Add cut potatoes to a pot of heavily salted water.",
+      "Bring pot to a boil.",
+      "Boil the potatoes until fork tender, about 15-20 minutes.",
+      "Strain the potatoes",
+      "Return potatoes to pot.",
+      "Add butter, cream, salt, and pepper to taste.",
+      "Mash potatoes.",
+      "Reseason and add butter and cream as desired.",
+    ],
+  },
+  {
+    title: "Pinky Pasta",
+    image: "pinky-pasta.jpg",
+    feedback: {
+      rating: 2.8,
+      reviews: 20,
+    },
+    ingredients: [
+      { name: "1/2 pound campanelle ", prepared: false },
+      { name: "3 tablespoons tomato paste", prepared: false },
+      { name: "3/4 cup chiken stock", prepared: false },
+      { name: "ground black pepper", prepared: true },
+      { name: "1 tablespoon butter", prepared: true },
+    ],
+    steps: [
+      "Add cut potatoes to a pot of heavily salted water.",
+      "Bring pot to a boil.",
+      "Boil the potatoes until fork tender, about 15-20 minutes.",
+      "Strain the potatoes",
+      "Return potatoes to pot.",
+      "Add butter, cream, salt, and pepper to taste.",
+      "Mash potatoes.",
+      "Reseason and add butter and cream as desired.",
+    ],
+  },
+];
