@@ -11,7 +11,7 @@ export default function App() {
   const [prepared, setPrepared] = useState(false);
 
   useEffect(() => {
-    setPrepared(recipe[0].ingredients.every((i) => i.prepared));
+    setPrepared(recipe.ingredients.every((i) => i.prepared));
   }, [recipe]);
 
   const handleIngredientClick = (index) => {
@@ -22,18 +22,20 @@ export default function App() {
     setRecipe(updatedRecipe);
   };
 
+  const { ingredients, image, title, feedback, steps } = recipe;
+
   return (
     <article className="container">
-      <RecipeImage image={recipe.image} title={recipe.title} />
-      <RecipeTitle title={recipe.title} feedback={recipe.feedback} />
+      <RecipeImage image={image} title={title} />
+      <RecipeTitle title={title} feedback={feedback} />
       <IngredientList
-        ingredients={recipe.ingredients}
+        ingredients={ingredients}
         onIngredientClick={handleIngredientClick}
       />
       <h2 className="subtitle">
         {prepared ? "👨‍🍳 Prep work done!" : "🍳 Just Keep chopping"}
       </h2>
-      <RecipeSteps steps={recipe.steps} />
+      <RecipeSteps steps={steps} />
     </article>
   );
 }
