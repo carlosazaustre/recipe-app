@@ -1,13 +1,8 @@
 import "./RecipeImage.css";
 import React from "react";
 
-export default function RecipeImage(props) {
+export function RecipeImage({ image, title }) {
   return (
-    <img
-      className="image"
-      src={`recipes/${props.image}`}
-      alt={props.title}
-      title={props.title}
-    />
+    <img className="image" src={`recipes/${image}`} alt={title} title={title} />
   );
 }

@@ -1,12 +1,12 @@
 import "./RecipeTitle.css";
 import React from "react";
 
-export default function RecipeTitle(props) {
+export function RecipeTitle({ title, feedback }) {
   return (
     <section className="recipe-title">
-      <h2>{props.title}</h2>
-      <h3 className={props?.feedback?.rating <= 3.5 ? "red" : "green"}>
-        {props?.feedback?.rating} from {props?.feedback?.reviews} reviews
+      <h2>{title}</h2>
+      <h3 className={feedback?.rating <= 3.5 ? "red" : "green"}>
+        {feedback?.rating} from {feedback?.reviews} reviews
       </h3>
     </section>
   );

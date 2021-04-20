@@ -1,9 +1,9 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import RecipeTitle from "./components/RecipeTitle";
-import RecipeImage from "./components/RecipeImage";
-import IngredientList from "./components/IngredientList";
-import RecipeSteps from "./components/RecipeSteps";
+import { RecipeTitle } from "./components/RecipeTitle";
+import { RecipeImage } from "./components/RecipeImage";
+import { IngredientList } from "./components/IngredientList";
+import { RecipeSteps } from "./components/RecipeSteps";
 import { initialRecipes } from "./initialRecipes";
 
 export default function App() {
