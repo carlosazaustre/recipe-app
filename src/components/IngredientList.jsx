@@ -1,7 +1,7 @@
 import "./IngredientList.css";
 import React from "react";
 
-export function IngredientList({ ingredients, onIngredientClick }) {
+export function IngredientList({ ingredients }) {
   return (
     <>
       <h2 className="subtitle">Ingredients List</h2>

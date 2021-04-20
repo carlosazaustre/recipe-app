@@ -11,7 +11,7 @@ export default function App() {
   const [prepared, setPrepared] = useState(false);
 
   useEffect(() => {
-    setPrepared(recipe.ingredients.every((i) => i.prepared));
+    setPrepared(recipe[0].ingredients.every((i) => i.prepared));
   }, [recipe]);
 
   const handleIngredientClick = (index) => {

@@ -6,7 +6,7 @@ export function RecipeSteps({ steps }) {
     <>
       <h2 className="subtitle">Steps</h2>
       <ol className="step-list">
-        {steps?.map((step, index) => (
+        {steps.map((step, index) => (
           <li key={index}>{step}</li>
         ))}
       </ol>
