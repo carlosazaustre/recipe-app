@@ -1,43 +1,21 @@
+import "./App.css";
 import React, { useState, useEffect } from "react";
-import RecipeTitle from "./RecipeTitle";
-import IngredientList from "./IngredientList";
-import RecipeSteps from "./RecipeSteps";
-
-const initialRecipe = {
-  title: "Mashed potatoes",
-  feedback: {
-    rating: 4.8,
-    reviews: 20,
-  },
-  ingredients: [
-    { name: '3 potatoes, cut into 1/2" pieces', prepared: false },
-    { name: "4 Tbsp butter", prepared: false },
-    { name: "1/8 cup heavy cream", prepared: false },
-    { name: "Salt", prepared: true },
-    { name: "Pepper", prepared: true },
-  ],
-  steps: [
-    "Add cut potatoes to a pot of heavily salted water.",
-    "Bring pot to a boil.",
-    "Boil the potatoes until fork tender, about 15-20 minutes.",
-    "Strain the potatoes",
-    "Return potatoes to pot.",
-    "Add butter, cream, salt, and pepper to taste.",
-    "Mash potatoes.",
-    "Reseason and add butter and cream as desired.",
-  ],
-};
+import { RecipeTitle } from "./components/RecipeTitle";
+import { RecipeImage } from "./components/RecipeImage";
+import { IngredientList } from "./components/IngredientList";
+import { RecipeSteps } from "./components/RecipeSteps";
+import { initialRecipes } from "./initialRecipes";
 
 export default function App() {
-  const [recipe, setRecipe] = useState(initialRecipe);
+  const [recipe, setRecipe] = useState(initialRecipes);
   const [prepared, setPrepared] = useState(false);
 
   useEffect(() => {
-    setPrepared(recipe.ingredients.every((i) => i.prepared));
+    setPrepared(recipe[0].ingredients.every((i) => i.prepared));
   }, [recipe]);
 
   const ingredientClick = (index) => {
-    const updatedRecipe = { ...recipe };
+    const updatedRecipe = { ...recipe[0] };
     updatedRecipe.ingredients[index].prepared = !updatedRecipe.ingredients[
       index
     ].prepared;
@@ -45,15 +23,17 @@ export default function App() {
   };
 
   return (
-    <article>
-      <h1>Reciple Manager</h1>
-      <RecipeTitle title={recipe.title} feedback={recipe.feedback} />
+    <article className="container">
+      <RecipeImage image={recipe[0].image} title={recipe[0].title} />
+      <RecipeTitle title={recipe[0].title} feedback={recipe[0].feedback} />
       <IngredientList
-        ingredients={recipe.ingredients}
+        ingredients={recipe[0].ingredients}
         onClick={ingredientClick}
       />
-      {prepared ? <h2>Prep work done!</h2> : <h2>Just keep chopping</h2>}
-      <RecipeSteps steps={recipe.steps} />
+      <h2 className="subtitle">
+        {recipe[0].prepared ? "👨‍🍳 Prep work done!" : "🍳 Just Keep chopping"}
+      </h2>
+      <RecipeSteps steps={recipe[0].steps} />
     </article>
   );
 }
